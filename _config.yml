@@ -42,7 +42,7 @@ youtube_username: IdanBidani
 # Using more than one of these may cause issues with reporting
 # gtm: "GTM-0000000"
 # gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
+google_analytics: "G-JKSHCVBVGX"
 
 # About Section
 # about_title: About Me
