@@ -76,7 +76,7 @@ content:
         caption: September 2013 - February 2018
         description: | # this will include new lines to allow paragraphs
             Lead engineer of the Software Configuration Management team. Supplied source control, automated compiling, deploying, and testing to support application development and operations teams. 
-            Introduced and rolled out (CI) Continuous Integration pipelines to Cox as part of its Digital Transformation initiative Maintained a large-scale CI/CD Jenkins environment generating a daily average of 550 automated activities (builds, deployments, tests) facilitating 3,975 releases in 2018
+            Introduced and rolled out (CI) Continuous Integration pipelines to Cox as part of its Digital Transformation initiative. Maintained a large-scale CI/CD Jenkins environment generating a daily average of 550 automated activities (builds, deployments, tests) facilitating 3,975 releases in 2018
       - layout: left
         title: SAP Labs, Israel
         link: https://www.sap.com/about/company/office-locations/israel.html
