@@ -3,3 +3,11 @@
 ---
 
 @import 'modern-resume-theme';
+
+.profile-img {
+  // The parent selector can be used to add pseudo-classes to the outer
+  // selector.
+  &:hover {
+    background-image: url("/images/idanAItoon.jpg");
+  }
+}
