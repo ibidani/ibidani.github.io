@@ -48,12 +48,11 @@ google_analytics: "G-JKSHCVBVGX"
 # about_title: About Me
 about_profile_image: "images/idanprofile.jpg"
 about_content: | # this will include new lines to allow paragraphs
- Husband to🥇, Intern Dad 👶🏽♀️.
+ Husband to🥇, Intern Dad 👧👦.
 
  Optimistic technologist. Specialist in application development and build environments, source control, infrastructure, CI/CD, quality and security. Enjoys solving problems at a large scale.
  Passionate about empowering individuals to do more with less (⌚🌲💸👐)
 
- I am most skilled in: <mark>Asking Quesions</mark>
 content:
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
@@ -92,7 +91,7 @@ content:
     layout: text
     content: | # this will include new lines to allow paragraphs
       Alongside my interests in technology some of my other interests and hobbies are:
-      - Spending time with my dearest [Joanna Bidani](https://jbidani.com) and our daughter
+      - Spending time with my dearest [Joanna Bidani](https://jbidani.com), our daughter and son 👨‍👩‍👧‍👦
       - Friends time
       - Playing the piano - Yamaha P-125
       - Hacking Home Automation Using [Home Assistant](https://www.home-assistant.io)
