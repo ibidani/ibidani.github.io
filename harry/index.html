@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blessing of Harry Slater Levi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS Variables for easy color management --- */
+        :root {
+            --text-color: #3b322c; /* Dark sepia/brown tone for main text */
+            --bg-color: #fdf9e8; /* Cream parchment color background */
+            --gold-color: #c5a968; /* A muted gold for the acrostic letters */
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #e0e0e0; /* Neutral background outside the certificate */
+            font-family: 'Crimson Text', serif; /* A classic serif font for body copy */
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- Main Certificate Container --- */
+        .certificate-box {
+            position: relative;
+            width: 100%;
+            max-width: 900px; /* Prevents it from getting too wide on large screens */
+            background-color: var(--bg-color);
+            /* Optional: Add a slight paper texture if you have one */
+            /* background-image: url('parchment-texture.jpg'); */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            padding: 90px 70px; /* Large padding to push text away from the vine borders */
+            overflow: hidden; /* Ensures corner images don't spill out */
+            border-radius: 4px;
+        }
+
+        /* --- Decorative Border Corners --- */
+        /* We use pseudo-elements (::before and ::after) to place the corner images 
+           so they don't clutter the main HTML structure. */
+        .certificate-box::before,
+        .certificate-box::after,
+        .certificate-box-inner::before,
+        .certificate-box-inner::after {
+            content: '';
+            position: absolute;
+            width: 28%; /* Adjust this percentage based on how closely you cropped the vine image */
+            height: 28%;
+            /* IMPORTANT: This path must lead to your cropped corner image */
+            background-image: url('vine-corner.png'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1; /* Sits below the text */
+            pointer-events: none; /* Ensures you can still select text underneath */
+            opacity: 0.9;
+        }
+
+        /* Top Left Corner */
+        .certificate-box::before {
+            top: 0;
+            left: 0;
+            background-position: top left;
+        }
+
+        /* Top Right Corner (Rotated 90 degrees clockwise) */
+        .certificate-box::after {
+            top: 0;
+            right: 0;
+            background-position: top left;
+            transform: rotate(90deg);
+        }
+
+        /* Bottom Right Corner (Rotated 180 degrees) */
+        .certificate-box-inner::after {
+            bottom: 0;
+            right: 0;
+            background-position: top left;
+            transform: rotate(180deg);
+        }
+
+        /* Bottom Left Corner (Rotated 270 degrees clockwise) */
+        .certificate-box-inner::before {
+            bottom: 0;
+            left: 0;
+            background-position: top left;
+            transform: rotate(270deg);
+        }
+
+
+        /* --- Content Layer --- */
+        .content-layer {
+            position: relative;
+            z-index: 10; /* Ensures text sits above the vine borders */
+            text-align: center;
+        }
+
+        /* --- Header Section (Icons and Title) --- */
+        .header-decoration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 20px; /* Space between icons and title */
+        }
+
+        .header-icon {
+            width: 70px; /* Adjust size depending on your icon resolution */
+            height: auto;
+            opacity: 0.85;
+        }
+
+        h1.main-title {
+            font-family: 'Cinzel Decorative', cursive; /* Decorative font for title */
+            font-size: 2.8rem;
+            margin: 0 15px;
+            font-weight: 700;
+            color: #2a221c; /* Slightly darker than body text */
+        }
+
+        /* --- Body Text & Acrostic Styling --- */
+        main {
+            text-align: left;
+            max-width: 80%;
+            margin: 0 auto; /* Centers the text block horizontally */
+        }
+
+        .acrostic-paragraph {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 1.8em;
+            padding-left: 55px; /* Creates space for the large initial letter */
+            position: relative;
+        }
+
+        /* The large, decorative initial letters */
+        .acrostic-letter {
+            position: absolute;
+            left: -5px;
+            top: -12px; /* Fine-tune vertical alignment based on the font */
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3.8rem;
+            color: var(--gold-color);
+            /* Adds a soft shadow to give the letters depth, like gold leaf */
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.15);
+        }
+        
+        /* Styling for the Hebrew quote block */
+        .hebrew-container {
+            margin: 25px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hebrew-text {
+            font-family: 'Times New Roman', serif; /* Standard serif handles Hebrew well */
+            font-size: 1.5rem;
+            font-weight: bold;
+            direction: rtl; /* Ensures correct right-to-left rendering */
+            color: #2a221c;
+        }
+
+        /* --- Footer Styling --- */
+        .mazel-tov {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3.5rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        /* --- Responsive Design for Tablets and Mobile --- */
+        @media (max-width: 850px) {
+             .certificate-box { padding: 70px 40px; }
+             h1.main-title { font-size: 2rem; }
+             .header-icon { width: 50px; }
+             main { max-width: 95%; }
+             .acrostic-letter { font-size: 3rem; left: 0; top: -8px; }
+             .acrostic-paragraph { padding-left: 45px; font-size: 1.05rem; }
+             .hebrew-text { font-size: 1.3rem; }
+             .mazel-tov { font-size: 2.5rem; }
+             /* Shrink corners on mobile so they don't cover text */
+             .certificate-box::before, .certificate-box::after, 
+             .certificate-box-inner::before, .certificate-box-inner::after {
+                 width: 20%; height: 20%;
+             }
+        }
+        @media (max-width: 480px) {
+             .certificate-box { padding: 50px 20px; }
+             .header-decoration { flex-direction: column; gap: 10px; }
+             h1.main-title { margin: 15px 0; text-align: center;}
+             .acrostic-letter { font-size: 2.5rem; position: relative; left: auto; top: auto; float: left; margin-right: 10px; line-height: 0.8;}
+             .acrostic-paragraph { padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="certificate-box">
+        <div class="certificate-box-inner"></div>
+
+        <div class="content-layer">
+            
+            <header class="header-decoration">
+                <img src="header-fire.png" alt="Fire icon" class="header-icon">
+                
+                <h1 class="main-title">The Blessing of Harry Slater Levi</h1>
+                
+                <img src="header-torah.png" alt="Torah scroll icon" class="header-icon">
+            </header>
+
+            <main>
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">H</span>ow fantastic it is to see everyone here. It's always special when extended family comes together for joyous occasions and especially to welcome a sweet new addition to the tribe. We are here today to celebrate not just a new life, but the incredible bond of the two souls who created him.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">A</span> union of complimentary elements is what we see in his parents. We have Kelli, who brings the Fire - she is adventurous, embracing life with open arms, thoughtful, giving, and full of spark. And we have Tommy, who brings the Water - sweet, bright, family-loving, and possessing a calm so deep that some might call it "slow," but we know it is simply the steady, unhurried rhythm of a peaceful soul. Harry is the perfect alchemy of this fire and water.
+                </div>
+                
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">R</span>emembering where we come from gives us roots to grow. Harry's first name is a loving tribute to his great-grandfather, Robin's grandfather, connecting him to a deep legacy of strength. And his middle name, Slater, holds a special piece of Kelli's family history; it is his grandmother's maiden name, chosen by her father on Staten Island. These names are more than just words; they are an embrace from the past, ensuring that no matter how far he roams, he is always held by the love of those who came before and their legacy.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">R</span>ecalling our ancient traditions, we look to the Torah to understand the weight of his Hebrew name. We remember the story of Yaakov, who worked seven years for Lavan to earn the hand of Rachel. But Lavan, in his trickery, gave him Leah instead. Yaakov, driven by love, worked another seven years to finally be with Rachel. It is a story of persistence, but also of destiny.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">Y</span>et, it is the story of Leah that matters most today. When she gave birth to her third son, she named him Levi, saying, 
+                    <div class="hebrew-container">
+                        <span class="hebrew-text">וַתַּ֣הַר עוֹד֘ וַתֵּ֣לֶד בֵּן֒ וַתֹּ֗אמֶר עַתָּ֤ה הַפַּ֙עַם֙ יִלָּוֶ֤ה אִישִׁי֙ אֵלַ֔י כִּֽי־יָלַ֥דְתִּי ל֖וֹ שְׁלֹשָׁ֣ה בָנִ֑ים עַל־כֵּ֥ן קָרָֽא־שְׁמ֖וֹ לֵוִֽי:</span>
+                    </div>
+                    (Genesis chapter 29) "Now this time, my husband will be joined to me." The name Levi literally means "to attach" or "to join." It was a plea for connection, for a bond that could not be broken.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">L</span>et Harry Slater Levi fulfill this destiny inherent in his name. May he be a great connector in this world. Just as the tribe of Levi became the ones who united the Jewish people in service and musical worship, may Harry be the glue that holds his friends and family together. May he possess the magnetic ability to join people in love and friendship.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">E</span>very day, may he embody the best of you both. May he have Kelli's zest for life and that desire to shower others with gifts, not just with material things, but with the best of himself. And may he have Tommy's kindness, that gentle, easy going nature that makes a home feel safe. May he be a man who is slow to anger and quick to love.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">V</span>iewing the next generation of this family, Harry already brings a perfect sense of balance. As the eighth cousin to arrive, he evens the score, making it officially four girls and four boys. We know the other boys are already excited to have a new playmate join their squad.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">I</span>nto this world, we welcome you, Harry Slater Levi. We are excited to stand by you, to discover who you are, and to love you as you write your own story. You are joined to us, and we are forever attached to you.
+                </div>
+
+            </main>
+
+            <footer>
+                <h2 class="mazel-tov">Mazel Tov!</h2>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>
