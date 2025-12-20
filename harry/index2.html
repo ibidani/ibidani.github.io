@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessing for Harry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS Variables based on the Flower Image --- */
+        :root {
+            --text-color: #4a403a; /* Dark warm grey/brown for readability */
+            --highlight-color: #dfa837; /* Mustard Gold pulled from the sunflowers */
+            --accent-blue: #7ca8c7; /* Soft blue from the corner flowers */
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0; /* Neutral grey background for the webpage */
+            font-family: 'Crimson Text', serif;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- Main Container --- */
+        .certificate-box {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Standard paper width feel */
+            /* This loads your uploaded file as the background */
+            background-image: url('harry-template-flowers.webp'); 
+            background-size: 100% 100%; /* Stretches image to fill the box */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #fff; /* Fallback color */
+            
+            /* CRITICAL: Padding ensures text stays inside the flower border */
+            /* Top/Bottom: 140px, Left/Right: 100px */
+            padding: 140px 100px; 
+            box-sizing: border-box; 
+            
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+
+        /* --- Typography & Layout --- */
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1.main-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2.6rem;
+            line-height: 1.2;
+            margin: 0;
+            color: #333;
+            font-weight: 700;
+        }
+
+        h1.main-title span {
+            display: block;
+            font-size: 1.8rem;
+            margin-top: 10px;
+            color: var(--highlight-color);
+        }
+
+        main {
+            text-align: left;
+        }
+
+        /* --- Acrostic Styling --- */
+        .acrostic-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+            position: relative;
+            padding-left: 0; /* Text flow */
+        }
+
+        /* The First Letter of every paragraph */
+        .acrostic-letter {
+            float: left;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3.2rem;
+            color: var(--highlight-color);
+            line-height: 0.8;
+            margin-right: 8px;
+            margin-top: 5px;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+        }
+
+        /* --- Hebrew Styling --- */
+        .hebrew-container {
+            display: block;
+            margin: 15px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hebrew-text {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.6rem;
+            font-weight: bold;
+            direction: rtl;
+            unicode-bidi: embed;
+            color: #222;
+            line-height: 1.4;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .mazel-tov {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3rem;
+            color: var(--accent-blue); /* Using the blue from the flowers */
+            margin: 0;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .certificate-box {
+                /* Reduce padding on mobile so text fits */
+                padding: 100px 50px; 
+                background-size: cover; /* Ensures background covers area even if text is long */
+            }
+            h1.main-title { font-size: 2rem; }
+            h1.main-title span { font-size: 1.4rem; }
+            .acrostic-letter { font-size: 2.5rem; }
+            .hebrew-text { font-size: 1.3rem; }
+        }
+        
+        @media (max-width: 480px) {
+             .certificate-box { padding: 80px 30px; }
+             h1.main-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="certificate-box">
+        <div class="content-layer">
+            
+            <header>
+                <h1 class="main-title">
+                    The Blessing of <br/>
+                    <span>Harry Slater Levi Bledsoe</span>
+                </h1>
+            </header>
+
+            <main>
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">H</span>ow fantastic it is to see everyone here. It's always special when extended family comes together for joyous occasions and especially to welcome a sweet new addition to the tribe. We are here today to celebrate not just a new life, but the incredible bond of the two souls who created him.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">A</span> union of complimentary elements is what we see in his parents. We have Kelli, who brings the Fire—she is adventurous, embracing life with open arms, thoughtful, giving, and full of spark. And we have Tommy, who brings the Water—sweet, bright, family-loving, and possessing a calm so deep that some might call it "slow," but we know it is simply the steady, unhurried rhythm of a peaceful soul. Harry is the perfect alchemy of this fire and water.
+                </div>
+                
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">R</span>emembering where we come from gives us roots to grow. Harry's first name is a loving tribute to his great-grandfather, Robin's grandfather, connecting him to a deep legacy of strength. And his middle name, Slater, holds a special piece of Kelli's family history; it is his grandmother's maiden name, chosen by her father on Staten Island. These names are more than just words; they are an embrace from the past.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">R</span>ecalling our ancient traditions, we look to the Torah to understand the weight of his Hebrew name. We remember the story of Yaakov, who worked seven years for Lavan to earn the hand of Rachel. But Lavan, in his trickery, gave him Leah instead. Yaakov, driven by love, worked another seven years to finally be with Rachel. It is a story of persistence, but also of destiny.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">Y</span>et, it is the story of Leah that matters most today. When she gave birth to her third son, she named him Levi, saying:
+                    <span class="hebrew-container">
+                        <span class="hebrew-text">וַתַּ֣הַר עוֹד֘ וַתֵּ֣לֶד בֵּן֒ וַתֹּ֗אמֶר עַתָּ֤ה הַפַּ֙עַם֙ יִלָּוֶ֤ה אִישִׁי֙ אֵלַ֔י כִּֽי־יָלַ֥דְתִּי ל֖וֹ שְׁלֹשָׁ֣ה בָנִ֑ים עַל־כֵּ֥ן קָרָֽא־שְׁמ֖וֹ לֵוִֽי</span>
+                    </span>
+                    (Genesis 29) "Now this time, my husband will be joined to me." The name Levi literally means "to attach" or "to join." It was a plea for connection, for a bond that could not be broken.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">L</span>et Harry Slater Levi Bledsoe fulfill this destiny inherent in his name. May he be a great connector in this world. Just as the tribe of Levi became the ones who united the Jewish people in service and musical worship, may Harry be the glue that holds his friends and family together. May he possess the magnetic ability to join people in love and friendship.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">E</span>very day, may he embody the best of you both. May he have Kelli's zest for life and that desire to shower others with gifts, not just with material things, but with the best of himself. And may he have Tommy's kindness, that gentle, easy going nature that makes a home feel safe. May he be a man who is slow to anger and quick to love.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">V</span>iewing the next generation of this family, Harry already brings a perfect sense of balance. As the eighth cousin to arrive, he evens the score, making it officially four girls and four boys. We know the other boys are already excited to have a new playmate join their squad.
+                </div>
+
+                <div class="acrostic-paragraph">
+                    <span class="acrostic-letter">I</span>nto this world, we welcome you, Harry Slater Levi. We are excited to stand by you, to discover who you are, and to love you as you write your own story. You are joined to us, and we are forever attached to you.
+                </div>
+
+            </main>
+
+            <footer>
+                <h2 class="mazel-tov">Mazel Tov!</h2>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>
